@@ -12,7 +12,21 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-let materialImports = [MatSliderModule, MatSidenavModule, MatButtonModule];
+import { UsersComponent } from './users/users.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { StudentsComponent } from './students/students.component';
+import { CoursesComponent } from './courses/courses.component';
+import { TeachersComponent } from './teachers/teachers.component';
+import { SubjectsComponent } from './subjects/subjects.component';
+
+let materialImports = [
+  MatSliderModule,
+  MatSidenavModule,
+  MatButtonModule,
+  MatTableModule,
+  MatInputModule,
+];
 
 @NgModule({
   declarations: [
@@ -20,6 +34,11 @@ let materialImports = [MatSliderModule, MatSidenavModule, MatButtonModule];
     HomeComponent,
     FetchDataComponent,
     NavMenuComponent,
+    UsersComponent,
+    StudentsComponent,
+    CoursesComponent,
+    TeachersComponent,
+    SubjectsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -27,7 +46,10 @@ let materialImports = [MatSliderModule, MatSidenavModule, MatButtonModule];
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'students', component: StudentsComponent },
+      { path: 'courses', component: CoursesComponent },
+      { path: 'teachers', component: TeachersComponent },
+      { path: 'subjects', component: SubjectsComponent },
     ]),
     BrowserAnimationsModule,
     ...materialImports,
